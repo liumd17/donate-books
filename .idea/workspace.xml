@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2d2d1b9-fb0b-45c9-8ac4-910107ba9a9c" name="Default Changelist" comment="" />
+    <list default="true" id="d2d2d1b9-fb0b-45c9-8ac4-910107ba9a9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/UserEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/book-system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/develop/BookSystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/BookSystemApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/develop/controller/testController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-pro.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,9 +29,34 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="book_donation_system@127.0.0.1" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="book_donation_system@127.0.0.1" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -32,11 +74,18 @@
     </option>
   </component>
   <component name="ProjectId" id="21GUUYLwoDdYI38YLKXtSI33zoC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../Software/sdk" />
@@ -48,12 +97,34 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.liumd.data.dto" />
+      <recent name="com.liumd.data.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\lmd\ku\graduation\book-system\src\main\resources" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="BookSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="book-system" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.liumd.develop.BookSystemApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="book-system" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.liumd.data.BookSystemApplication" />
+      <option name="ACTIVE_PROFILES" value="test" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="MANIFEST" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -64,7 +135,12 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:book_donation_system@127.0.0.1" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -85,24 +161,117 @@
       <workItem from="1640239894371" duration="1830000" />
       <workItem from="1640575840974" duration="2947000" />
       <workItem from="1640683762891" duration="1527000" />
+      <workItem from="1640758499119" duration="836000" />
+      <workItem from="1641456890856" duration="1210000" />
+      <workItem from="1641458704446" duration="807000" />
+      <workItem from="1641460382316" duration="512000" />
+      <workItem from="1641782486618" duration="7329000" />
     </task>
+    <task id="LOCAL-00001" summary="book-system上传">
+      <created>1640758689033</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1640758689033</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="book-system上传" />
+    <option name="LAST_COMMIT_MESSAGE" value="book-system上传" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="265" y="5" key="CommitChangelistDialog2" timestamp="1640758640669">
+    <state x="360" y="70" key="#Inspections" timestamp="1641788843839">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="265" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1640758640669" />
-    <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1640758582859">
+    <state x="360" y="70" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1641788843839" />
+    <state x="222" y="66" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1641787862701">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1640758582859" />
-    <state x="269" y="53" key="SettingsEditor" timestamp="1640758516991">
+    <state x="222" y="66" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1641787862701" />
+    <state x="573" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1641785754266">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="269" y="53" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1640758516991" />
+    <state x="573" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1641785754266" />
+    <state x="265" y="5" key="CommitChangelistDialog2" timestamp="1640758687022">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="265" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1640758687022" />
+    <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1641460665476">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1641460665476" />
+    <state x="627" y="302" key="Github.ShareDialog" timestamp="1640758840316">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="627" y="302" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1640758840316" />
+    <state width="1490" height="260" key="GridCell.Tab.0.bottom" timestamp="1641793246914">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1490" height="260" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1641793246914" />
+    <state width="1490" height="260" key="GridCell.Tab.0.center" timestamp="1641793246914">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1490" height="260" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1641793246914" />
+    <state width="1490" height="260" key="GridCell.Tab.0.left" timestamp="1641793246913">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1490" height="260" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1641793246913" />
+    <state width="1490" height="260" key="GridCell.Tab.0.right" timestamp="1641793246914">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1490" height="260" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1641793246914" />
+    <state width="1490" height="260" key="GridCell.Tab.1.bottom" timestamp="1641793256624">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1490" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1641793256624" />
+    <state width="1490" height="260" key="GridCell.Tab.1.center" timestamp="1641793256624">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1490" height="260" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1641793256624" />
+    <state width="1490" height="260" key="GridCell.Tab.1.left" timestamp="1641793256624">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1490" height="260" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1641793256624" />
+    <state width="1490" height="260" key="GridCell.Tab.1.right" timestamp="1641793256624">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1490" height="260" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1641793256624" />
+    <state width="1490" height="260" key="GridCell.Tab.2.bottom" timestamp="1641793246777">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1490" height="260" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1641793246777" />
+    <state width="1490" height="260" key="GridCell.Tab.2.center" timestamp="1641793246776">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1490" height="260" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1641793246776" />
+    <state width="1490" height="260" key="GridCell.Tab.2.left" timestamp="1641793246776">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1490" height="260" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1641793246776" />
+    <state width="1490" height="260" key="GridCell.Tab.2.right" timestamp="1641793246776">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1490" height="260" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1641793246776" />
+    <state x="269" y="0" key="SettingsEditor" timestamp="1641782872416">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="269" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1641782872416" />
+    <state x="360" y="133" key="Vcs.Push.Dialog.v2" timestamp="1640759087590">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="360" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1640759087590" />
+    <state x="447" y="150" width="642" height="524" key="find.popup" timestamp="1641789173004">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="447" y="150" width="642" height="524" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1641789173004" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1641788091377">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1641788091377" />
   </component>
 </project>
