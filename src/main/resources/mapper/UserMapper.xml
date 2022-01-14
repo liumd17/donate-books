@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liumd.data.mapper.UserMapper">
+
+    <select id="selUserByMailbox" resultType="com.liumd.data.entity.UserEntity">
+        select mailbox, passw0rd, nickname, user_name, sex, mobile, receiving_address, recommend_keyword
+        from bds_user
+        <where>
+            mailbox = #{mailbox}
+        </where>
+    </select>
+
+</mapper>

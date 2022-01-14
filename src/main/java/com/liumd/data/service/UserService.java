@@ -1,6 +1,7 @@
 package com.liumd.data.service;
 
 import com.liumd.data.dto.UserDto;
+import com.liumd.data.dto.vo.UserVo;
 
 /**
  * @author liumuda
@@ -13,6 +14,19 @@ public interface UserService {
      * @param userDto
      * @return
      */
-    Boolean userLogin(UserDto userDto);
+    UserVo userLogin(UserDto userDto);
 
+    /**
+     * 用户注册
+     * @param userDto
+     * @return
+     */
+    void userRegister(UserDto userDto);
+
+    /**
+     * 通过邮箱账号查询用户
+     * @param mailbox
+     * @return
+     */
+    UserVo queryUserByMailbox(String mailbox);
 }

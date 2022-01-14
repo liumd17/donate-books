@@ -1,5 +1,6 @@
 package com.liumd.data.dto;
 
+import com.liumd.data.entity.BaseEntity;
 import lombok.Data;
 
 
@@ -8,7 +9,7 @@ import lombok.Data;
  * @date 2022/1/10 11:10
  */
 @Data
-public class UserDto {
+public class UserDto extends BaseEntity {
 
     /**
      * 用户邮箱(账号)
