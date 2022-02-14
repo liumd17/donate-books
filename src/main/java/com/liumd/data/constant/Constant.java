@@ -25,6 +25,14 @@ public final class Constant {
     // 过期时间30天
     public static final long EXPIRE_TIME_30 = 30*24*60*60*1000L;
 
+    /**
+     * 异常编码
+     */
+    //空指针异常
+    public static final int NULL_ERROR = 401;
+    //数据错误
+    public static final int DATA_ERROR = 402;
+
     public Constant() {
     }
 }

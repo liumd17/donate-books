@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -36,12 +37,12 @@ public class UserServiceImpl implements UserService {
     public UserVo userLogin(UserDto userDto) {
         String mailbox = userDto.getMailbox();
         if (StringUtil.isNullOrEmpty(mailbox)){
-            throw new ServiceException(401, "用户邮箱为空!");
+            throw new ServiceException(Constant.NULL_ERROR, "用户邮箱为空!");
         }
 
         String passw0rd = userDto.getPassw0rd();
         if (StringUtil.isNullOrEmpty(passw0rd)){
-            throw new ServiceException(401, "用户密码为空!");
+            throw new ServiceException(Constant.NULL_ERROR, "用户密码为空!");
         }
 
         //检查用户登录信息
@@ -55,27 +56,27 @@ public class UserServiceImpl implements UserService {
                         Constant.EXPIRE_TIME_30_MINS, TimeUnit.MILLISECONDS); //设置用户登录Token, 过期时间30分钟
                 return userVo;
             }else {
-                throw new ServiceException(401, "登录密码错误!");
+                throw new ServiceException(Constant.DATA_ERROR, "登录密码错误!");
             }
         }else {
-            throw new ServiceException(401, "用户不存在!");
+            throw new ServiceException(Constant.DATA_ERROR, "用户不存在!");
         }
     }
 
-    @Transactional
     @Override
-    public void userRegister(UserDto userDto) {
+    @Transactional
+    public Boolean userRegister(UserDto userDto) {
         String mailbox = userDto.getMailbox();
         if (StringUtil.isNullOrEmpty(mailbox)){
-            throw new ServiceException(401, "用户邮箱为空!");
+            throw new ServiceException(Constant.NULL_ERROR, "用户邮箱为空!");
         }
 
         String passw0rd = userDto.getPassw0rd();
         if (StringUtil.isNullOrEmpty(passw0rd)){
-            throw new ServiceException(401, "用户密码为空!");
+            throw new ServiceException(Constant.NULL_ERROR, "用户密码为空!");
         }
         if (ObjectUtils.isNotEmpty(userMapper.selUserByMailbox(mailbox))) {
-            throw new ServiceException(401, "该用户已存在!");
+            throw new ServiceException(Constant.DATA_ERROR, "该用户已存在!");
         }
 
         UserEntity userEntity = new UserEntity();
@@ -83,14 +84,37 @@ public class UserServiceImpl implements UserService {
         userEntity.setId(null);
         userEntity.setPassw0rd(MD5Util.encrypt(userDto.getPassw0rd()));
         userEntity.setCreateTime(new Date());
-        userMapper.insert(userEntity);
 
+        return userMapper.insert(userEntity) > 0;
+    }
+
+    @Override
+    @Transactional
+    public Boolean updateUser(@Validated UserEntity userEntity) {
+        Integer id = userEntity.getId();
+        if (ObjectUtils.isNotEmpty(id)){
+            throw new ServiceException(Constant.NULL_ERROR, "用户id不能为空!");
+        }
+        UserEntity updateUserEntity = userMapper.selectById(id);
+        userEntity.setPassw0rd(MD5Util.encrypt(userEntity.getPassw0rd()));
+        if (ObjectUtils.isNotEmpty(updateUserEntity)) {
+            BeanUtils.copyProperties(userEntity, updateUserEntity);
+        } else {
+            throw new ServiceException(Constant.DATA_ERROR, "用户不存在!");
+        }
+
+        return userMapper.updateById(updateUserEntity) > 0;
     }
 
     @Override
     public UserVo queryUserByMailbox(String mailbox) {
         UserEntity userEntity = userMapper.selUserByMailbox(mailbox);
-        return null;
+        UserVo userVo = new UserVo();
+        if (ObjectUtils.isNotEmpty(userEntity)){
+            BeanUtils.copyProperties(userEntity, userVo);
+        }
+
+        return userVo;
     }
 
 }

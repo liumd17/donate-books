@@ -3,6 +3,8 @@ package com.liumd.data.dto;
 import com.liumd.data.entity.BaseEntity;
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
+
 
 /**
  * @author liumuda
@@ -14,6 +16,7 @@ public class UserDto extends BaseEntity {
     /**
      * 用户邮箱(账号)
      */
+    @NotBlank(message = "用户邮箱不能为空")
     private String mailbox;
 
     /**

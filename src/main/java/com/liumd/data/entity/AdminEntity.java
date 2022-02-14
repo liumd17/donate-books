@@ -6,41 +6,40 @@ import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.validation.constraints.NotBlank;
 
 /**
  * @author liumuda
- * @date 2022/1/10 11:10
+ * @date 2022/2/14 11:40
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@TableName("bds_user")
-public class UserEntity extends BaseEntity {
+@TableName("bds_admin")
+public class AdminEntity extends BaseEntity {
 
     /**
-     * 用户邮箱(账号)
+     * 管理员账号
      */
-    @Column(name = "mailbox")
-    private String mailbox;
+    @Column(name = "account")
+    private String account;
 
     /**
-     * 用户密码
+     * 密码
      */
     @Column(name = "passw0rd")
     private String passw0rd;
 
     /**
-     * 用户昵称
+     * 管理员昵称
      */
     @Column(name = "nickname")
     private String nickname;
 
     /**
-     * 用户姓名
+     * 管理员姓名
      */
-    @Column(name = "user_name")
-    private String userName;
+    @Column(name = "admin_name")
+    private String adminName;
 
     /**
      * 性别
@@ -54,15 +53,4 @@ public class UserEntity extends BaseEntity {
     @Column(name = "mobile")
     private String mobile;
 
-    /**
-     * 收货地址
-     */
-    @Column(name = "receiving_address")
-    private String receivingAddress;
-
-    /**
-     * 推荐关键字
-     */
-    @Column(name = "recommend_keyword")
-    private String recommendKeyword;
 }
