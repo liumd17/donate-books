@@ -24,7 +24,7 @@ public class BookVo extends BaseEntity {
     /**
      * 书籍信息
      */
-    private String bookInfo;
+    private String bookPicture;
 
     /**
      * 书籍关键字

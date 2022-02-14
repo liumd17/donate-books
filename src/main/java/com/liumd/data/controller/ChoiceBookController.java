@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2022/2/14 11:18
  */
 @RestController
-@RequestMapping("/book")
-public class BookController {
+@RequestMapping("/choice")
+public class ChoiceBookController {
 }

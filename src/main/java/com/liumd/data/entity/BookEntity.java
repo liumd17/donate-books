@@ -32,8 +32,8 @@ public class BookEntity extends BaseEntity {
     /**
      * 书籍信息
      */
-    @Column(name = "book_info")
-    private String bookInfo;
+    @Column(name = "book_picture")
+    private String bookPicture;
 
     /**
      * 书籍关键字

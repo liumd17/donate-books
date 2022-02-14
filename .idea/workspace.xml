@@ -1,35 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2d2d1b9-fb0b-45c9-8ac4-910107ba9a9c" name="Default Changelist" comment="默认配置">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/controller/BookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/AdminDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/BookDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/vo/AdminVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/vo/BookVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/AdminEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/BookEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/mapper/AdminMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/mapper/BookMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/AdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/BookMapper.xml" afterDir="false" />
+    <list default="true" id="d2d2d1b9-fb0b-45c9-8ac4-910107ba9a9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/OrderDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/vo/OrderVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/OrderEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/mapper/OrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/book-system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/constant/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/controller/ChoiceBookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/BookDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/BookDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/vo/BookVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/vo/BookVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/BookEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/BookEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,27 +88,28 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../Software/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mapper" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.liumd.data.service" />
+      <recent name="com.liumd.data.service.impl" />
+      <recent name="com.liumd.data.mapper" />
       <recent name="com.liumd.data.entity" />
       <recent name="com.liumd.data.dto" />
-      <recent name="com.liumd.data.dto.vo" />
-      <recent name="com.liumd.data.config" />
-      <recent name="com.liumd.data.constant" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\lmd\ku\graduation\book-system\src\main\resources\mapper" />
       <recent name="F:\lmd\ku\graduation\book-system\src\main\resources" />
     </key>
   </component>
@@ -253,7 +239,7 @@
       <workItem from="1644568172328" duration="1488000" />
       <workItem from="1644665713704" duration="2306000" />
       <workItem from="1644799653584" duration="9929000" />
-      <workItem from="1644825810533" duration="1809000" />
+      <workItem from="1644825810533" duration="4258000" />
     </task>
     <task id="LOCAL-00001" summary="book-system上传">
       <created>1640758689033</created>
@@ -276,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642146254569</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="用户,管理员账号登录注册">
+      <created>1644827700548</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1644827700548</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +278,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="book-system上传" />
     <MESSAGE value="默认配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="默认配置" />
+    <MESSAGE value="用户,管理员账号登录注册" />
+    <option name="LAST_COMMIT_MESSAGE" value="用户,管理员账号登录注册" />
   </component>
   <component name="WindowStateProjectService">
     <state x="360" y="70" key="#Inspections" timestamp="1641788843839">
@@ -312,10 +306,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1642122905188" />
-    <state x="265" y="5" key="CommitChangelistDialog2" timestamp="1644810243060">
+    <state x="265" y="5" key="CommitChangelistDialog2" timestamp="1644827697829">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="265" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1644810243060" />
+    <state x="265" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1644827697829" />
     <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1644802454753">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -376,14 +370,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="298" y="66" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1642145459726" />
-    <state x="269" y="0" key="SettingsEditor" timestamp="1644667848234">
+    <state x="269" y="0" key="SettingsEditor" timestamp="1644828074255">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="269" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1644667848234" />
-    <state x="360" y="133" key="Vcs.Push.Dialog.v2" timestamp="1642146256307">
+    <state x="269" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1644828074255" />
+    <state x="360" y="133" key="Vcs.Push.Dialog.v2" timestamp="1644827703035">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="360" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1642146256307" />
+    <state x="360" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1644827703035" />
     <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1644807823304">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
