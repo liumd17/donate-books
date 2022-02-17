@@ -1,7 +1,8 @@
 package com.liumd.data.dto;
 
-import com.liumd.data.entity.BaseEntity;
+import com.liumd.data.base.BaseEntity;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.validation.constraints.NotBlank;
 
@@ -10,6 +11,7 @@ import javax.validation.constraints.NotBlank;
  * @author liumuda
  * @date 2022/1/10 11:10
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class UserDto extends BaseEntity {
 

@@ -1,4 +1,4 @@
-package com.liumd.data.entity;
+package com.liumd.data.base;
 
 import lombok.Data;
 

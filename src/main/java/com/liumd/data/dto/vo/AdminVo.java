@@ -1,6 +1,6 @@
 package com.liumd.data.dto.vo;
 
-import com.liumd.data.entity.BaseEntity;
+import com.liumd.data.base.BaseEntity;
 import lombok.Data;
 
 /**

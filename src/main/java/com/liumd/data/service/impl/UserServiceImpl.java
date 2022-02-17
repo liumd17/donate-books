@@ -1,6 +1,5 @@
 package com.liumd.data.service.impl;
 
-import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import com.liumd.data.constant.Constant;
 import com.liumd.data.dto.UserDto;
 import com.liumd.data.dto.vo.UserVo;
@@ -15,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.ObjectUtils;
 import org.springframework.validation.annotation.Validated;
 
 import java.util.Date;
@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
 
         //检查用户登录信息
         UserEntity userEntity = userMapper.selUserByMailbox(mailbox);
-        if (ObjectUtils.isNotEmpty(userEntity)) {
+        if (!ObjectUtils.isEmpty(userEntity)) {
             String password = userEntity.getPassw0rd();
             if (password.equals(MD5Util.encrypt(passw0rd))){
                 UserVo userVo = new UserVo();
@@ -75,7 +75,7 @@ public class UserServiceImpl implements UserService {
         if (StringUtil.isNullOrEmpty(passw0rd)){
             throw new ServiceException(Constant.NULL_ERROR, "用户密码为空!");
         }
-        if (ObjectUtils.isNotEmpty(userMapper.selUserByMailbox(mailbox))) {
+        if (!ObjectUtils.isEmpty(userMapper.selUserByMailbox(mailbox))) {
             throw new ServiceException(Constant.DATA_ERROR, "该用户已存在!");
         }
 
@@ -92,25 +92,25 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public Boolean updateUser(@Validated UserEntity userEntity) {
         Integer id = userEntity.getId();
-        if (ObjectUtils.isNotEmpty(id)){
+        if (!ObjectUtils.isEmpty(id)){
             throw new ServiceException(Constant.NULL_ERROR, "用户id不能为空!");
         }
-        UserEntity updateUserEntity = userMapper.selectById(id);
+        UserEntity updateUserEntity = userMapper.selectByPrimaryKey(id);
         userEntity.setPassw0rd(MD5Util.encrypt(userEntity.getPassw0rd()));
-        if (ObjectUtils.isNotEmpty(updateUserEntity)) {
+        if (!ObjectUtils.isEmpty(updateUserEntity)) {
             BeanUtils.copyProperties(userEntity, updateUserEntity);
         } else {
             throw new ServiceException(Constant.DATA_ERROR, "用户不存在!");
         }
 
-        return userMapper.updateById(updateUserEntity) > 0;
+        return userMapper.updateByPrimaryKey(updateUserEntity) > 0;
     }
 
     @Override
     public UserVo queryUserByMailbox(String mailbox) {
         UserEntity userEntity = userMapper.selUserByMailbox(mailbox);
         UserVo userVo = new UserVo();
-        if (ObjectUtils.isNotEmpty(userEntity)){
+        if (!ObjectUtils.isEmpty(userEntity)){
             BeanUtils.copyProperties(userEntity, userVo);
         }
 

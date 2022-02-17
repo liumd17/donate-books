@@ -1,12 +1,12 @@
 package com.liumd.data.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.liumd.data.base.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.Table;
 
 /**
  * @author liumuda
@@ -15,7 +15,7 @@ import javax.validation.constraints.NotBlank;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@TableName("bds_user")
+@Table(name = "bds_user")
 public class UserEntity extends BaseEntity {
 
     /**

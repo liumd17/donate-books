@@ -1,11 +1,12 @@
 package com.liumd.data.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.liumd.data.base.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * @author liumuda
@@ -14,7 +15,7 @@ import javax.persistence.Entity;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@TableName("bds_book")
+@Table(name = "bds_book")
 public class BookEntity extends BaseEntity {
 
     /**
@@ -30,7 +31,7 @@ public class BookEntity extends BaseEntity {
     private Integer bookAmount;
 
     /**
-     * 书籍信息
+     * 书籍图片
      */
     @Column(name = "book_picture")
     private String bookPicture;

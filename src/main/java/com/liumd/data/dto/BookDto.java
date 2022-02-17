@@ -1,9 +1,7 @@
 package com.liumd.data.dto;
 
-import com.liumd.data.entity.BaseEntity;
+import com.liumd.data.base.BaseEntity;
 import lombok.Data;
-
-import javax.validation.constraints.NotBlank;
 
 
 /**

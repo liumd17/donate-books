@@ -1,6 +1,5 @@
 package com.liumd.data.service.impl;
 
-import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import com.liumd.data.constant.Constant;
 import com.liumd.data.dto.AdminDto;
 import com.liumd.data.dto.vo.AdminVo;
@@ -14,6 +13,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -44,7 +44,7 @@ public class AdminServiceImpl implements AdminService {
 
         //检查管理员登录信息
         AdminEntity adminEntity = adminMapper.selAdminByAccount(account);
-        if (ObjectUtils.isNotEmpty(adminEntity)) {
+        if (!ObjectUtils.isEmpty(adminEntity)) {
             String password = adminEntity.getPassw0rd();
             if (password.equals(MD5Util.encrypt(passw0rd))){
                 AdminVo adminVo = new AdminVo();
@@ -65,7 +65,7 @@ public class AdminServiceImpl implements AdminService {
     public AdminVo queryAdminByAccount(String account) {
         AdminEntity adminEntity = adminMapper.selAdminByAccount(account);
         AdminVo adminVo = new AdminVo();
-        if (ObjectUtils.isNotEmpty(adminEntity)){
+        if (!ObjectUtils.isEmpty(adminEntity)){
             BeanUtils.copyProperties(adminEntity, adminVo);
         }
 
@@ -75,17 +75,17 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Boolean updateAdmin(AdminEntity adminEntity) {
         Integer id = adminEntity.getId();
-        if (ObjectUtils.isNotEmpty(id)){
+        if (!ObjectUtils.isEmpty(id)){
             throw new ServiceException(Constant.NULL_ERROR, "管理员id不能为空!");
         }
-        AdminEntity updateAdminEntity = adminMapper.selectById(id);
-        if (ObjectUtils.isNotEmpty(updateAdminEntity)) {
+        AdminEntity updateAdminEntity = adminMapper.selectByPrimaryKey(id);
+        if (!ObjectUtils.isEmpty(updateAdminEntity)) {
             adminEntity.setPassw0rd(MD5Util.encrypt(adminEntity.getPassw0rd()));
             BeanUtils.copyProperties(adminEntity, updateAdminEntity);
         } else {
             throw new ServiceException(Constant.DATA_ERROR, "管理员不存在!");
         }
 
-        return adminMapper.updateById(updateAdminEntity) > 0;
+        return adminMapper.updateByPrimaryKey(updateAdminEntity) > 0;
     }
 }

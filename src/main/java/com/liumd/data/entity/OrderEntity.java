@@ -1,11 +1,12 @@
 package com.liumd.data.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.liumd.data.base.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
@@ -15,7 +16,7 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@TableName("bds_order")
+@Table(name = "bds_order")
 public class OrderEntity extends BaseEntity {
 
     /**

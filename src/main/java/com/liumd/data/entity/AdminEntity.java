@@ -1,11 +1,12 @@
 package com.liumd.data.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.liumd.data.base.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * @author liumuda
@@ -14,7 +15,7 @@ import javax.persistence.Entity;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@TableName("bds_admin")
+@Table(name = "bds_admin")
 public class AdminEntity extends BaseEntity {
 
     /**
