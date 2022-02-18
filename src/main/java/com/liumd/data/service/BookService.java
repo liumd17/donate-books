@@ -31,8 +31,8 @@ public interface BookService {
 
     /**
      * 根据用户信息获取推荐书籍列表
-     * @param userDto
+     * @param mailbox
      * @return
      */
-    List<BookVo> getRecBooks(UserDto userDto);
+    List<BookVo> getRecBooks(String mailbox);
 }

@@ -2,7 +2,6 @@ package com.liumd.data.dto;
 
 import lombok.Data;
 
-import javax.persistence.Column;
 import java.util.Date;
 
 /**
@@ -53,9 +52,9 @@ public class OrderDto {
     private String orderStatus;
 
     /**
-     * 订单日期
+     * 订单日期  yyyy-MM-dd
      */
-    private Date orderDate;
+    private String orderDate;
 
     /**
      * 处理人姓名

@@ -71,7 +71,7 @@ public class OrderEntity extends BaseEntity {
      * 订单日期
      */
     @Column(name = "order_date")
-    private Date orderDate;
+    private String orderDate;
 
     /**
      * 处理人姓名

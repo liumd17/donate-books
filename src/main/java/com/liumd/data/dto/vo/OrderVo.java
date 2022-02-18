@@ -56,7 +56,7 @@ public class OrderVo extends BaseEntity {
     /**
      * 订单日期
      */
-    private Date orderDate;
+    private String orderDate;
 
     /**
      * 处理人姓名

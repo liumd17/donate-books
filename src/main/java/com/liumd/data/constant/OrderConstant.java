@@ -14,7 +14,7 @@ public final class OrderConstant {
     /**
      * 0 订单完成
      */
-    public static final String ORDER_FINISH = "01";
+    public static final String ORDER_FINISH = "0";
 
     /**
      * 1 待支付

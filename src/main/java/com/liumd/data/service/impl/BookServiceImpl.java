@@ -64,7 +64,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<BookVo> getRecBooks(UserDto userDto) {
+    public List<BookVo> getRecBooks(String mailbox) {
         //TODO  获取推进书籍逻辑
         return null;
     }

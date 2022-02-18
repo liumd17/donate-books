@@ -3,7 +3,6 @@ package com.liumd.data.controller;
 import com.liumd.data.dto.BookDto;
 import com.liumd.data.dto.OrderDto;
 import com.liumd.data.dto.ResponsePageDto;
-import com.liumd.data.dto.UserDto;
 import com.liumd.data.dto.vo.BookOrderVo;
 import com.liumd.data.dto.vo.BookVo;
 import com.liumd.data.dto.vo.ShowBookVo;
@@ -48,8 +47,8 @@ public class ChoiceBookController {
      */
     @SneakyThrows
     @RequestMapping(value = "/homePage", method = RequestMethod.GET)
-    public ShowBookVo bookPage(UserDto userDto, BookDto bookDto, Paging paging) {
-        List<BookVo> recBooks = bookService.getRecBooks(userDto);
+    public ShowBookVo bookPage(String mailbox, BookDto bookDto, Paging paging) {
+        List<BookVo> recBooks = bookService.getRecBooks(mailbox);
         ResponsePageDto<BookVo> bookPageList = bookService.pageList(bookDto, paging);
         ShowBookVo showBookVo = new ShowBookVo();
         if (!ObjectUtils.isEmpty(recBooks)){
