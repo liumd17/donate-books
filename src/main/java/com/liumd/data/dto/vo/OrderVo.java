@@ -54,7 +54,7 @@ public class OrderVo extends BaseEntity {
     private String orderStatus;
 
     /**
-     * 订单日期
+     * 订单日期 yyyy-MM
      */
     private String orderDate;
 

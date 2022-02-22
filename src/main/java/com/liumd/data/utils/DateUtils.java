@@ -54,6 +54,10 @@ public class DateUtils {
         return new DateTime().toString("yyyy-MM-dd");
     }
 
+    public static String getNowYesMonth() {
+        return new DateTime().toString("yyyy-MM");
+    }
+
     public static String formatDate(Date date) {
         return formatDate(date, "yyyy-MM-dd");
     }

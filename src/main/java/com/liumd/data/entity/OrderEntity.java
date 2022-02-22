@@ -68,7 +68,7 @@ public class OrderEntity extends BaseEntity {
     private String orderStatus;
 
     /**
-     * 订单日期
+     * 订单日期   yyyy-MM
      */
     @Column(name = "order_date")
     private String orderDate;

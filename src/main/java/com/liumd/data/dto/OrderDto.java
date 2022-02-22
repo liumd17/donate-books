@@ -12,6 +12,11 @@ import java.util.Date;
 public class OrderDto {
 
     /**
+     * 订单编号
+     */
+    private Integer orderId;
+
+    /**
      * 用户编号
      */
     private Integer userId;
@@ -52,7 +57,7 @@ public class OrderDto {
     private String orderStatus;
 
     /**
-     * 订单日期  yyyy-MM-dd
+     * 订单日期  yyyy-MM
      */
     private String orderDate;
 
