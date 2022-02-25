@@ -22,18 +22,23 @@ public final class OrderConstant {
     public static final String ORDER_PAY = "1";
 
     /**
-     * 2 待发货
+     * 2 待管理员确认
      */
-    public static final String ORDER_SEND = "2";
+    public static final String ORDER_CONFIRM_PAY = "2";
 
     /**
-     * 3 运输中
+     * 3 待发货
      */
-    public static final String ORDER_TRANSPORT = "3";
+    public static final String ORDER_SEND = "3";
 
     /**
-     * 4 退货中
+     * 4 运输中
      */
-    public static final String ORDER_RETURN = "4";
+    public static final String ORDER_TRANSPORT = "4";
+
+    /**
+     * 5 退货中
+     */
+    public static final String ORDER_RETURN = "5";
 
 }

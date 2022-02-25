@@ -25,6 +25,13 @@ public interface AdminService {
     AdminVo queryAdminByAccount(String account);
 
     /**
+     * 查询管理员信息
+     * @param adminId
+     * @return
+     */
+    AdminVo queryAdminById(Integer adminId);
+
+    /**
      * 管理员信息修改
      * @param adminEntity
      * @return

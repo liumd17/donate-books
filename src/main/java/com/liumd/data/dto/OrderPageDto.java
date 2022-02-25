@@ -15,6 +15,11 @@ public class OrderPageDto {
     private Integer userId;
 
     /**
+     * 联系电话
+     */
+    private String mobile;
+
+    /**
      * 书籍名称
      */
     private String bookName;

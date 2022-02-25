@@ -73,6 +73,17 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public AdminVo queryAdminById(Integer adminId) {
+        AdminEntity adminEntity = adminMapper.selectByPrimaryKey(adminId);
+        AdminVo adminVo = new AdminVo();
+        if (!ObjectUtils.isEmpty(adminEntity)){
+            BeanUtils.copyProperties(adminEntity, adminVo);
+        }
+
+        return adminVo;
+    }
+
+    @Override
     public Boolean updateAdmin(AdminEntity adminEntity) {
         Integer id = adminEntity.getId();
         if (!ObjectUtils.isEmpty(id)){

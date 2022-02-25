@@ -5,7 +5,6 @@ import com.github.pagehelper.PageInfo;
 import com.liumd.data.constant.Constant;
 import com.liumd.data.dto.BookDto;
 import com.liumd.data.dto.ResponsePageDto;
-import com.liumd.data.dto.UserDto;
 import com.liumd.data.dto.vo.BookVo;
 import com.liumd.data.entity.BookEntity;
 import com.liumd.data.mapper.BookMapper;
@@ -14,12 +13,16 @@ import com.liumd.data.service.BookService;
 import com.liumd.data.utils.DataUtil;
 import com.liumd.data.utils.exceptionUtil.ServiceException;
 import lombok.SneakyThrows;
+import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.util.StringUtil;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -65,8 +68,38 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<BookVo> getRecBooks(String mailbox) {
-        //TODO  获取推进书籍逻辑
+        //TODO  获取推荐书籍
         return null;
+    }
+
+    @Transactional
+    @Override
+    public BookVo updateBook(BookDto bookDto) {
+        Integer bookId = bookDto.getId();
+        if (ObjectUtils.isEmpty(bookId)){
+            throw new ServiceException(Constant.NULL_ERROR, "书籍ID为空!");
+        }
+        BookEntity bookEntity = bookMapper.selectByPrimaryKey(bookId);
+        if (ObjectUtils.isEmpty(bookEntity)){
+            throw new ServiceException(Constant.DATA_ERROR, "该书籍不存在!");
+        }
+        if (StringUtil.isNotEmpty(bookDto.getBookName())){
+            bookEntity.setBookName(bookDto.getBookName());
+        }
+        if (StringUtil.isNotEmpty(bookDto.getBookPicture())){
+            bookEntity.setBookPicture(bookDto.getBookPicture());
+        }
+        if (StringUtil.isNotEmpty(bookDto.getBookKeyword())){
+            bookEntity.setBookKeyword(bookDto.getBookKeyword());
+        }
+        if (!ObjectUtils.isEmpty(bookDto.getBookAmount())){
+            bookEntity.setBookAmount(bookDto.getBookAmount());
+        }
+        bookEntity.setUpdateTime(new Date());
+        bookMapper.updateByPrimaryKey(bookEntity);
+        BookVo bookVo = new BookVo();
+        BeanUtils.copyProperties(bookEntity, bookVo);
+        return bookVo;
     }
 
 }

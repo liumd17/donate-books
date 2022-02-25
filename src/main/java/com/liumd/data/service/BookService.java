@@ -35,4 +35,11 @@ public interface BookService {
      * @return
      */
     List<BookVo> getRecBooks(String mailbox);
+
+    /**
+     * 更新书籍信息
+     * @param bookDto
+     * @return
+     */
+    BookVo updateBook(BookDto bookDto);
 }

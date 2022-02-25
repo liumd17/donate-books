@@ -117,4 +117,14 @@ public class UserServiceImpl implements UserService {
         return userVo;
     }
 
+    @Override
+    public UserVo queryUserById(Integer userId) {
+        UserEntity userEntity = userMapper.selectByPrimaryKey(userId);
+        UserVo userVo = new UserVo();
+        if (!ObjectUtils.isEmpty(userEntity)){
+            BeanUtils.copyProperties(userEntity, userVo);
+        }
+        return userVo;
+    }
+
 }

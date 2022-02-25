@@ -37,4 +37,11 @@ public interface UserService {
      * @return
      */
     UserVo queryUserByMailbox(String mailbox);
+
+    /**
+     * 通过用户id查询用户
+     * @param userId
+     * @return
+     */
+    UserVo queryUserById(Integer userId);
 }

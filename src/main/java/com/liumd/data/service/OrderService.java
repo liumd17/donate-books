@@ -34,12 +34,42 @@ public interface OrderService {
      * @param paging
      * @return
      */
-    ResponsePageDto<OrderVo> getOrderPageInfo(OrderPageDto orderPageDto, Paging paging);
+    ResponsePageDto<OrderVo> getUserOrderPageInfo(OrderPageDto orderPageDto, Paging paging);
 
     /**
      * 取消订单
      * @param orderDto
      * @return
      */
-    OrderVo cancelOrder(OrderDto orderDto);
+    OrderVo editOrder(OrderDto orderDto);
+
+    /**
+     * 获取所有订单信息
+     * @param orderPageDto
+     * @param paging
+     * @return
+     */
+    ResponsePageDto<OrderVo> getAllOrderPageInfo(OrderPageDto orderPageDto, Paging paging);
+
+    /**
+     * 发送发货成功邮件提醒
+     * @param orderId
+     * @return
+     */
+    Boolean sendDeliveryMail(Integer orderId);
+
+    /**
+     * 用户支付运费
+     * @param orderId
+     * @return
+     */
+    OrderVo userPay(Integer orderId);
+
+    /**
+     * 管理员确认支付
+     * @param orderId
+     * @param adminId
+     * @return
+     */
+    OrderVo adminConfirmPay(Integer orderId, Integer adminId);
 }
