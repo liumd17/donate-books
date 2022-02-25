@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liumd.data.mapper.BookMapper">
+
+    <select id="getBookByBookName" resultType="com.liumd.data.entity.BookEntity">
+        select
+            id,
+            book_name as bookName,
+            book_amount as bookAmount,
+            book_picture as bookPicture,
+            book_keyword as bookKeyword,
+            create_time as createTime,
+            update_time as updateTime
+        from bds_book
+        <where>
+            book_name = #{bookName}
+        </where>
+    </select>
+
+</mapper>

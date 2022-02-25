@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.liumd.data.constant.Constant;
 import com.liumd.data.dto.BookDto;
+import com.liumd.data.dto.BookImportDto;
 import com.liumd.data.dto.ResponsePageDto;
 import com.liumd.data.dto.vo.BookVo;
 import com.liumd.data.entity.BookEntity;
@@ -13,7 +14,6 @@ import com.liumd.data.service.BookService;
 import com.liumd.data.utils.DataUtil;
 import com.liumd.data.utils.exceptionUtil.ServiceException;
 import lombok.SneakyThrows;
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -100,6 +100,37 @@ public class BookServiceImpl implements BookService {
         BookVo bookVo = new BookVo();
         BeanUtils.copyProperties(bookEntity, bookVo);
         return bookVo;
+    }
+
+    @Transactional
+    @Override
+    public Boolean saveImportBook(List<BookImportDto> bookImportDtos) {
+        bookImportDtos.forEach(bookImportDto -> {
+            BookEntity bookEntity = bookMapper.getBookByBookName(bookImportDto.getBookName());
+            if (ObjectUtils.isEmpty(bookEntity)){
+                try {
+                    BookEntity importBook = DataUtil.getTransData(bookImportDto, BookEntity.class);
+                    importBook.setCreateTime(new Date());
+                    bookMapper.insert(importBook);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }else {
+                if (bookImportDto.getBookAmount() >= 0){
+                    bookEntity.setBookAmount(bookEntity.getBookAmount() + bookImportDto.getBookAmount());
+                }
+                if (StringUtil.isNotEmpty(bookImportDto.getBookPicture())){
+                    bookEntity.setBookPicture(bookImportDto.getBookPicture());
+                }
+                if (StringUtil.isNotEmpty(bookImportDto.getBookKeyword())){
+                    bookEntity.setBookKeyword(bookImportDto.getBookKeyword());
+                }
+                bookEntity.setUpdateTime(new Date());
+                bookMapper.updateByPrimaryKey(bookEntity);
+            }
+        });
+
+        return Boolean.TRUE;
     }
 
 }

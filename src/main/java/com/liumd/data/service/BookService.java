@@ -1,6 +1,7 @@
 package com.liumd.data.service;
 
 import com.liumd.data.dto.BookDto;
+import com.liumd.data.dto.BookImportDto;
 import com.liumd.data.dto.ResponsePageDto;
 import com.liumd.data.dto.UserDto;
 import com.liumd.data.dto.vo.BookVo;
@@ -42,4 +43,11 @@ public interface BookService {
      * @return
      */
     BookVo updateBook(BookDto bookDto);
+
+    /**
+     * 保存书籍导入信息
+     * @param bookImportDtos
+     * @return
+     */
+    Boolean saveImportBook(List<BookImportDto> bookImportDtos);
 }

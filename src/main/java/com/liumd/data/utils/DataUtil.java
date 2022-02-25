@@ -31,4 +31,22 @@ public class DataUtil {
         }
         return des;
     }
+
+    /**
+     * 将源类型转换成新的类型
+     * @param source 源类型
+     * @param clazz 新类型对应的class类
+     * @param <T> 源类型
+     * @param <E> 新类型
+     * @return
+     * @throws Exception
+     */
+    public static <T, E> E getTransData(T source, Class<E> clazz) throws Exception {
+        E e = clazz.newInstance();
+        if (source != null){
+            BeanUtils.copyProperties(source, e);
+        }
+        return e;
+    }
+
 }

@@ -1,15 +1,19 @@
 package com.liumd.data.controller;
 
 import com.liumd.data.dto.BookDto;
+import com.liumd.data.dto.BookImportDto;
 import com.liumd.data.dto.ResponsePageDto;
 import com.liumd.data.dto.vo.BookVo;
 import com.liumd.data.pageObject.Paging;
 import com.liumd.data.service.BookService;
+import com.liumd.data.utils.excel.ExcelImportUtil;
+import com.liumd.data.utils.exceptionUtil.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * @author liumuda
@@ -41,6 +45,24 @@ public class BookManageController {
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public BookVo editAdmin(@RequestBody BookDto bookDto) {
         return bookService.updateBook(bookDto);
+    }
+
+    /**
+     *
+     * @param file
+     * @return
+     */
+    @RequestMapping(value = "/import", method = RequestMethod.POST)
+    public Boolean bookListImport(@RequestParam MultipartFile file) {
+        try {
+            List<BookImportDto> bookImportDtos = ExcelImportUtil.importExcel(file.getInputStream(), BookImportDto.class);
+            return bookService.saveImportBook(bookImportDtos);
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+
+        throw new ServiceException("导入数据异常, 请联系相关人员");
     }
 
 }

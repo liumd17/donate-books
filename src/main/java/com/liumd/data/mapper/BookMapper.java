@@ -10,4 +10,12 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface BookMapper extends BaseRepository<BookEntity> {
+
+    /**
+     * 通过书籍名称获取书籍信息
+     * @param bookName
+     * @return
+     */
+    BookEntity getBookByBookName(String bookName);
+
 }
