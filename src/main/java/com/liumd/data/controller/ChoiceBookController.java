@@ -21,7 +21,7 @@ import java.util.List;
  * @date 2022/2/14 11:18
  */
 @RestController
-@RequestMapping("/choice")
+@RequestMapping("/user/choice")
 public class ChoiceBookController {
 
     @Autowired

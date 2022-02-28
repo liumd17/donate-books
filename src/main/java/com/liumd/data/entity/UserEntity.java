@@ -49,6 +49,12 @@ public class UserEntity extends BaseEntity {
     private Boolean sex;
 
     /**
+     * 年龄
+     */
+    @Column(name = "age")
+    private Integer age;
+
+    /**
      * 手机号
      */
     @Column(name = "mobile")
@@ -60,9 +66,4 @@ public class UserEntity extends BaseEntity {
     @Column(name = "receiving_address")
     private String receivingAddress;
 
-    /**
-     * 推荐关键字
-     */
-    @Column(name = "recommend_keyword")
-    private String recommendKeyword;
 }

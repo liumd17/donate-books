@@ -42,6 +42,11 @@ public class UserDto extends BaseEntity {
     private Boolean sex;
 
     /**
+     * 年龄
+     */
+    private Integer age;
+
+    /**
      * 手机号
      */
     private String mobile;
@@ -51,8 +56,4 @@ public class UserDto extends BaseEntity {
      */
     private String receivingAddress;
 
-    /**
-     * 推荐关键字
-     */
-    private String recommendKeyword;
 }

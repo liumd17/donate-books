@@ -33,8 +33,8 @@ public class BookImportDto extends BaseEntity {
     private String bookPicture;
 
     /**
-     * 书籍关键字
+     * 适宜用户
      */
-    @ExcelField(name = "书籍关键字")
-    private String bookKeyword;
+    @ExcelField(name = "适宜用户")
+    private String fitUser;
 }

@@ -3,6 +3,8 @@ package com.liumd.data.dto;
 import com.liumd.data.base.BaseEntity;
 import lombok.Data;
 
+import javax.persistence.Column;
+
 
 /**
  * @author liumuda
@@ -27,7 +29,7 @@ public class BookDto extends BaseEntity {
     private String bookPicture;
 
     /**
-     * 书籍关键字
+     * 适宜用户
      */
-    private String bookKeyword;
+    private String fitUser;
 }

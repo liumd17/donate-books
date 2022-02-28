@@ -37,8 +37,8 @@ public class BookEntity extends BaseEntity {
     private String bookPicture;
 
     /**
-     * 书籍关键字
+     * 适宜用户
      */
-    @Column(name = "book_keyword")
-    private String bookKeyword;
+    @Column(name = "fit_user")
+    private String fitUser;
 }

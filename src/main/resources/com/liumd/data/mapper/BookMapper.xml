@@ -10,13 +10,34 @@
             book_name as bookName,
             book_amount as bookAmount,
             book_picture as bookPicture,
-            book_keyword as bookKeyword,
+            fit_user as fitUser,
             create_time as createTime,
             update_time as updateTime
         from bds_book
         <where>
             book_name = #{bookName}
         </where>
+    </select>
+
+    <select id="getRecBooks" resultType="com.liumd.data.entity.BookEntity">
+        SELECT
+            id,
+            book_name as bookName,
+            book_amount as bookAmount,
+            book_picture as bookPicture,
+            fit_user as fitUser,
+            create_time as createTime,
+            update_time as updateTime
+	    FROM bds_book t1
+	    <where>
+            t1.id NOT IN
+            (SELECT book_id FROM bds_order WHERE user_id = #{userId})
+            AND t1.book_amount > 0
+            <if test="fitUser != null">
+            AND t1.fit_user LIKE concat(concat('%',#{fitUser}),'%')
+            </if>
+        </where>
+        ORDER BY create_time DESC LIMIT 3
     </select>
 
 </mapper>

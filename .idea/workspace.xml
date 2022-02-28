@@ -2,28 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2d2d1b9-fb0b-45c9-8ac4-910107ba9a9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/BookImportDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/utils/excel/ExcelExportUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/utils/excel/ExcelImportUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/utils/excel/FieldReflectionUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/utils/excel/ReflectUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/utils/excel/annotation/ExcelField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/utils/excel/annotation/ExcelSheet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/utils/excel/comparator/IndexComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/utils/excel/entity/ClassListEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/liumd/data/mapper/BookMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/constant/BookFitUserConstant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/book-system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/controller/BookManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/controller/BookManageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/controller/ChoiceBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/controller/ChoiceBookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/BookDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/BookDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/BookImportDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/BookImportDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/vo/BookVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/vo/BookVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/vo/UserVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/dto/vo/UserVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/BookEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/BookEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/entity/UserEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/mapper/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/mapper/BookMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liumd/data/utils/DataUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liumd/data/utils/DataUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/liumd/data/mapper/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/BookMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/liumd/data/mapper/OrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/liumd/data/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/liumd/data/mapper/BookMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/liumd/data/mapper/BookMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/liumd/data/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/liumd/data/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +110,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -291,7 +284,11 @@
       <workItem from="1645694185173" duration="780000" />
       <workItem from="1645695416453" duration="956000" />
       <workItem from="1645755162365" duration="8324000" />
-      <workItem from="1645770308548" duration="6753000" />
+      <workItem from="1645770308548" duration="6846000" />
+      <workItem from="1645852352913" duration="1012000" />
+      <workItem from="1645950217477" duration="1462000" />
+      <workItem from="1646010388849" duration="30000" />
+      <workItem from="1646010770358" duration="7202000" />
     </task>
     <task id="LOCAL-00001" summary="book-system上传">
       <created>1640758689033</created>
@@ -363,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645770666718</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="文件导入导出">
+      <created>1645778585812</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1645778585812</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +381,8 @@
     <MESSAGE value="订单确认" />
     <MESSAGE value="用户订单管理界面" />
     <MESSAGE value="支付发货邮件通知" />
-    <option name="LAST_COMMIT_MESSAGE" value="支付发货邮件通知" />
+    <MESSAGE value="文件导入导出" />
+    <option name="LAST_COMMIT_MESSAGE" value="文件导入导出" />
   </component>
   <component name="WindowStateProjectService">
     <state x="360" y="70" key="#Inspections" timestamp="1641788843839">
@@ -388,14 +393,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="360" y="69" key="#Tomcat_Server/0.0.1536.824@0.0.1536.824" timestamp="1644568238260" />
-    <state x="222" y="66" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1644666741921">
+    <state x="222" y="66" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1645852634916">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="222" y="66" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1644666741921" />
+    <state x="222" y="66" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1645852634916" />
     <state x="573" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1645774826656">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="573" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1645774826656" />
+    <state x="360" y="69" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1645852568266">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="360" y="69" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1536.824@0.0.1536.824" timestamp="1645852568266" />
     <state x="402" y="336" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1642064274987">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -404,90 +413,90 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1645004046514" />
-    <state x="265" y="5" key="CommitChangelistDialog2" timestamp="1645770662919">
+    <state x="265" y="5" key="CommitChangelistDialog2" timestamp="1645778582609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="265" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1645770662919" />
+    <state x="265" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1645778582609" />
     <state x="40" y="64" key="DiffContextDialog" timestamp="1645405077722">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="40" y="64" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1645405077722" />
-    <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1645773062666">
+    <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1646017438025">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1645773062666" />
+    <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1646017438025" />
     <state x="627" y="302" key="Github.ShareDialog" timestamp="1640758840316">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="627" y="302" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1640758840316" />
-    <state width="1490" height="260" key="GridCell.Tab.0.bottom" timestamp="1645778325448">
+    <state width="1490" height="260" key="GridCell.Tab.0.bottom" timestamp="1646019943559">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1490" height="260" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1645778325448" />
-    <state width="1490" height="260" key="GridCell.Tab.0.center" timestamp="1645778325448">
+    <state width="1490" height="260" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646019943559" />
+    <state width="1490" height="260" key="GridCell.Tab.0.center" timestamp="1646019943559">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1490" height="260" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1645778325448" />
-    <state width="1490" height="260" key="GridCell.Tab.0.left" timestamp="1645778325448">
+    <state width="1490" height="260" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1646019943559" />
+    <state width="1490" height="260" key="GridCell.Tab.0.left" timestamp="1646019943559">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1490" height="260" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1645778325448" />
-    <state width="1490" height="260" key="GridCell.Tab.0.right" timestamp="1645778325448">
+    <state width="1490" height="260" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1646019943559" />
+    <state width="1490" height="260" key="GridCell.Tab.0.right" timestamp="1646019943559">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1490" height="260" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1645778325448" />
-    <state width="1490" height="260" key="GridCell.Tab.1.bottom" timestamp="1645778325348">
+    <state width="1490" height="260" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1646019943559" />
+    <state width="1490" height="260" key="GridCell.Tab.1.bottom" timestamp="1646019890902">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1490" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1645778325348" />
-    <state width="1490" height="260" key="GridCell.Tab.1.center" timestamp="1645778325348">
+    <state width="1490" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646019890902" />
+    <state width="1490" height="260" key="GridCell.Tab.1.center" timestamp="1646019890902">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1490" height="260" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1645778325348" />
-    <state width="1490" height="260" key="GridCell.Tab.1.left" timestamp="1645778325348">
+    <state width="1490" height="260" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1646019890902" />
+    <state width="1490" height="260" key="GridCell.Tab.1.left" timestamp="1646019890901">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1490" height="260" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1645778325348" />
-    <state width="1490" height="260" key="GridCell.Tab.1.right" timestamp="1645778325348">
+    <state width="1490" height="260" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1646019890901" />
+    <state width="1490" height="260" key="GridCell.Tab.1.right" timestamp="1646019890902">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1490" height="260" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1645778325348" />
-    <state width="1490" height="260" key="GridCell.Tab.2.bottom" timestamp="1645778325348">
+    <state width="1490" height="260" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1646019890902" />
+    <state width="1490" height="260" key="GridCell.Tab.2.bottom" timestamp="1646019881791">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1490" height="260" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1645778325348" />
-    <state width="1490" height="260" key="GridCell.Tab.2.center" timestamp="1645778325348">
+    <state width="1490" height="260" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646019881791" />
+    <state width="1490" height="260" key="GridCell.Tab.2.center" timestamp="1646019881791">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1490" height="260" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1645778325348" />
-    <state width="1490" height="260" key="GridCell.Tab.2.left" timestamp="1645778325348">
+    <state width="1490" height="260" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1646019881791" />
+    <state width="1490" height="260" key="GridCell.Tab.2.left" timestamp="1646019881791">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1490" height="260" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1645778325348" />
-    <state width="1490" height="260" key="GridCell.Tab.2.right" timestamp="1645778325348">
+    <state width="1490" height="260" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1646019881791" />
+    <state width="1490" height="260" key="GridCell.Tab.2.right" timestamp="1646019881791">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1490" height="260" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1645778325348" />
+    <state width="1490" height="260" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1646019881791" />
     <state x="298" y="66" key="Maven.ArtifactSearchDialog" timestamp="1645773038284">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="298" y="66" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1645773038284" />
-    <state x="269" y="0" key="SettingsEditor" timestamp="1645694778390">
+    <state x="269" y="0" key="SettingsEditor" timestamp="1645852552824">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="269" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1645694778390" />
-    <state x="360" y="133" key="Vcs.Push.Dialog.v2" timestamp="1645770698843">
+    <state x="269" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1645852552824" />
+    <state x="360" y="133" key="Vcs.Push.Dialog.v2" timestamp="1645778590125">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="360" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1645770698843" />
-    <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1645768939817">
+    <state x="360" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1645778590125" />
+    <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1646019899591">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="775" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1645768939817" />
-    <state x="447" y="150" width="642" height="524" key="find.popup" timestamp="1645518248886">
+    <state width="775" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1646019899591" />
+    <state x="447" y="150" width="642" height="524" key="find.popup" timestamp="1646017910187">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="447" y="150" width="642" height="524" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1645518248886" />
+    <state x="447" y="150" width="642" height="524" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1646017910187" />
     <state x="463" y="202" key="git4idea.merge.GitPullDialog" timestamp="1645519426714">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -496,6 +505,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1645756306086" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/liumd/data/controller/ChoiceBookController.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/liumd/data/service/impl/BookServiceImpl.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/book_system$BookSystemApplication.ic" NAME="BookSystemApplication Coverage Results" MODIFIED="1644982641674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

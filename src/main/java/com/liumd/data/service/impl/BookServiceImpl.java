@@ -2,15 +2,18 @@ package com.liumd.data.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.liumd.data.constant.BookFitUserConstant;
 import com.liumd.data.constant.Constant;
 import com.liumd.data.dto.BookDto;
 import com.liumd.data.dto.BookImportDto;
 import com.liumd.data.dto.ResponsePageDto;
 import com.liumd.data.dto.vo.BookVo;
+import com.liumd.data.dto.vo.UserVo;
 import com.liumd.data.entity.BookEntity;
 import com.liumd.data.mapper.BookMapper;
 import com.liumd.data.pageObject.Paging;
 import com.liumd.data.service.BookService;
+import com.liumd.data.service.UserService;
 import com.liumd.data.utils.DataUtil;
 import com.liumd.data.utils.exceptionUtil.ServiceException;
 import lombok.SneakyThrows;
@@ -22,6 +25,7 @@ import org.springframework.util.ObjectUtils;
 import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.util.StringUtil;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -31,6 +35,9 @@ import java.util.List;
  */
 @Service
 public class BookServiceImpl implements BookService {
+
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private BookMapper bookMapper;
@@ -54,8 +61,11 @@ public class BookServiceImpl implements BookService {
         PageHelper.startPage(paging.getPageNum(), paging.getPageSize());
         Example example = new Example(BookEntity.class);
         Example.Criteria criteria = example.createCriteria();
-        if (!ObjectUtils.isEmpty(bookDto.getBookName())){
+        if (StringUtil.isNotEmpty(bookDto.getBookName())){
             criteria.andLike("bookName", "%" + bookDto.getBookName() + "%");
+        }
+        if (StringUtil.isNotEmpty(bookDto.getFitUser())){
+            criteria.andLike("FitUser", "%" + bookDto.getFitUser() + "%");
         }
         criteria.orGreaterThan("bookAmount", 0);
         example.orderBy("createTime").desc();
@@ -66,10 +76,20 @@ public class BookServiceImpl implements BookService {
                 pageInfo.getTotal(), pageInfo.getPageSize(), pageInfo.getPageNum());
     }
 
+    @SneakyThrows
     @Override
     public List<BookVo> getRecBooks(String mailbox) {
-        //TODO  获取推荐书籍
-        return null;
+        UserVo user = userService.queryUserByMailbox(mailbox);
+        if (ObjectUtils.isEmpty(user)){
+            throw new ServiceException(Constant.NULL_ERROR, "该用户数据为空!");
+        }
+
+        List<BookEntity> recBooks = bookMapper.getRecBooks(user.getId(), selectFitUserByAge(user.getAge()));;
+        if (ObjectUtils.isEmpty(recBooks) || recBooks.size() < 3){
+            recBooks = bookMapper.getRecBooks(user.getId(), null);
+        }
+
+        return DataUtil.getDataList(recBooks, BookVo.class);
     }
 
     @Transactional
@@ -89,8 +109,8 @@ public class BookServiceImpl implements BookService {
         if (StringUtil.isNotEmpty(bookDto.getBookPicture())){
             bookEntity.setBookPicture(bookDto.getBookPicture());
         }
-        if (StringUtil.isNotEmpty(bookDto.getBookKeyword())){
-            bookEntity.setBookKeyword(bookDto.getBookKeyword());
+        if (StringUtil.isNotEmpty(bookDto.getFitUser())){
+            bookEntity.setFitUser(bookDto.getFitUser());
         }
         if (!ObjectUtils.isEmpty(bookDto.getBookAmount())){
             bookEntity.setBookAmount(bookDto.getBookAmount());
@@ -122,8 +142,8 @@ public class BookServiceImpl implements BookService {
                 if (StringUtil.isNotEmpty(bookImportDto.getBookPicture())){
                     bookEntity.setBookPicture(bookImportDto.getBookPicture());
                 }
-                if (StringUtil.isNotEmpty(bookImportDto.getBookKeyword())){
-                    bookEntity.setBookKeyword(bookImportDto.getBookKeyword());
+                if (StringUtil.isNotEmpty(bookImportDto.getFitUser())){
+                    bookEntity.setFitUser(bookImportDto.getFitUser());
                 }
                 bookEntity.setUpdateTime(new Date());
                 bookMapper.updateByPrimaryKey(bookEntity);
@@ -131,6 +151,23 @@ public class BookServiceImpl implements BookService {
         });
 
         return Boolean.TRUE;
+    }
+
+    /**
+     * 通过用户年龄分析用户类型
+     * @param age
+     * @return
+     */
+    private String selectFitUserByAge(Integer age){
+        if (age <= BookFitUserConstant.AGE_PUPIL){
+            return BookFitUserConstant.FIT_PUPIL;
+        }else if (age <= BookFitUserConstant.AGE_MIDDLE){
+            return BookFitUserConstant.FIT_MIDDLE;
+        }else if (age <= BookFitUserConstant.AGE_COLLEGE){
+            return BookFitUserConstant.FIT_COLLEGE;
+        }else {
+            return BookFitUserConstant.FIT_ADULT;
+        }
     }
 
 }

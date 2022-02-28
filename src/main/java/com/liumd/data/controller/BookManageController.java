@@ -48,7 +48,7 @@ public class BookManageController {
     }
 
     /**
-     *
+     * 导入书籍信息(新增书籍)
      * @param file
      * @return
      */
