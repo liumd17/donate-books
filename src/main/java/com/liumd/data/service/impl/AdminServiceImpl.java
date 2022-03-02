@@ -49,7 +49,7 @@ public class AdminServiceImpl implements AdminService {
             if (password.equals(MD5Util.encrypt(passw0rd))){
                 AdminVo adminVo = new AdminVo();
                 BeanUtils.copyProperties(adminEntity, adminVo);
-                valueOperations.set(Constant.USER_LOGIN_TOKEN + account, adminEntity,
+                valueOperations.set(Constant.USER_MAILBOX + account, adminEntity,
                         Constant.EXPIRE_TIME_30_MINS, TimeUnit.MILLISECONDS); //设置用户登录Token, 过期时间30分钟
                 return adminVo;
             }else {

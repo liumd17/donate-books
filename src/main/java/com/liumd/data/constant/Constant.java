@@ -8,7 +8,7 @@ public final class Constant {
      * Token
      */
     //用户登录Token
-    public static final String USER_LOGIN_TOKEN = "user:login:token:";
+    public static final String USER_MAILBOX = "UserMailbox";
 
     // 过期时间30秒
     public static final int EXPIRE_TIME_30_SECD = 1*30*1000;

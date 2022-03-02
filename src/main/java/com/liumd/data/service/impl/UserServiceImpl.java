@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
             if (password.equals(MD5Util.encrypt(passw0rd))){
                 UserVo userVo = new UserVo();
                 BeanUtils.copyProperties(userEntity, userVo);
-                valueOperations.set(Constant.USER_LOGIN_TOKEN + mailbox, userEntity,
+                valueOperations.set(Constant.USER_MAILBOX + mailbox, userEntity,
                         Constant.EXPIRE_TIME_30_MINS, TimeUnit.MILLISECONDS); //设置用户登录Token, 过期时间30分钟
                 return userVo;
             }else {

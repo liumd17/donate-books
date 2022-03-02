@@ -19,11 +19,6 @@ public class UserVo extends BaseEntity {
     private String mailbox;
 
     /**
-     * 用户密码
-     */
-    private String passw0rd;
-
-    /**
      * 用户昵称
      */
     private String nickname;

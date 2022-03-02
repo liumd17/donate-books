@@ -29,7 +29,7 @@ public class LoginController {
         return userService.userLogin(userDto);
     }
 
-    @RequestMapping(value = "/userRegister", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/register", method = RequestMethod.POST)
     public Boolean userRegister(@RequestBody UserDto userDto) {
         return userService.userRegister(userDto);
     }
