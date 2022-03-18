@@ -1,6 +1,7 @@
 package com.liumd.data.service;
 
 import com.liumd.data.dto.UserDto;
+import com.liumd.data.dto.vo.UserLoginVo;
 import com.liumd.data.dto.vo.UserVo;
 import com.liumd.data.entity.UserEntity;
 
@@ -15,7 +16,7 @@ public interface UserService {
      * @param userDto
      * @return
      */
-    UserVo userLogin(UserDto userDto);
+    UserLoginVo userLogin(UserDto userDto);
 
     /**
      * 用户注册

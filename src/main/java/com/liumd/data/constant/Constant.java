@@ -20,6 +20,8 @@ public final class Constant {
     public static final int EXPIRE_TIME_5_MINS = 5*60*1000;
     // 过期时间30分钟
     public static final int EXPIRE_TIME_30_MINS = 30*60*1000;
+    // 过期时间1小时
+    public static final int EXPIRE_TIME_1_HOUR = 60*60*1000;
     // 过期时间3天
     public static final int EXPIRE_TIME_3 = 3*24*60*60*1000;
     // 过期时间30天
@@ -29,9 +31,11 @@ public final class Constant {
      * 异常编码
      */
     //空指针异常
-    public static final int NULL_ERROR = 401;
+    public static final int NULL_ERROR = 409;
     //数据错误
-    public static final int DATA_ERROR = 402;
+    public static final int DATA_ERROR = 405;
+    //登录失败
+    public static final int LOGIN_ERROR = 401;
 
     public Constant() {
     }

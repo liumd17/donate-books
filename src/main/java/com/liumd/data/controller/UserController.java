@@ -3,8 +3,13 @@ package com.liumd.data.controller;
 import com.liumd.data.dto.vo.UserVo;
 import com.liumd.data.entity.UserEntity;
 import com.liumd.data.service.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author liumuda
@@ -22,8 +27,8 @@ public class UserController {
         return userService.updateUser(userEntity);
     }
 
-    @RequestMapping(value = "/queryUser", method = RequestMethod.GET)
-    public UserVo queryUser(@RequestParam String mailbox) {
+    @RequestMapping(value = "/queryUser", method = RequestMethod.POST)
+    public UserVo queryUser(@RequestBody String mailbox) {
         return userService.queryUserByMailbox(mailbox);
     }
 

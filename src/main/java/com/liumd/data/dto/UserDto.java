@@ -27,6 +27,11 @@ public class UserDto extends BaseEntity {
     private String passw0rd;
 
     /**
+     * 确认密码
+     */
+    private String surePassw0rd;
+
+    /**
      * 用户昵称
      */
     private String nickname;

@@ -2,6 +2,7 @@ package com.liumd.data.service.impl;
 
 import com.liumd.data.constant.Constant;
 import com.liumd.data.dto.UserDto;
+import com.liumd.data.dto.vo.UserLoginVo;
 import com.liumd.data.dto.vo.UserVo;
 import com.liumd.data.entity.UserEntity;
 import com.liumd.data.mapper.UserMapper;
@@ -18,6 +19,7 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.validation.annotation.Validated;
 
 import java.util.Date;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -34,7 +36,7 @@ public class UserServiceImpl implements UserService {
     private ValueOperations<String, Object> valueOperations;
 
     @Override
-    public UserVo userLogin(UserDto userDto) {
+    public UserLoginVo userLogin(UserDto userDto) {
         String mailbox = userDto.getMailbox();
         if (StringUtil.isNullOrEmpty(mailbox)){
             throw new ServiceException(Constant.NULL_ERROR, "用户邮箱为空!");
@@ -46,15 +48,19 @@ public class UserServiceImpl implements UserService {
         }
 
         //检查用户登录信息
+        UserLoginVo userLoginVo = new UserLoginVo();
         UserEntity userEntity = userMapper.selUserByMailbox(mailbox);
         if (!ObjectUtils.isEmpty(userEntity)) {
             String password = userEntity.getPassw0rd();
             if (password.equals(MD5Util.encrypt(passw0rd))){
                 UserVo userVo = new UserVo();
                 BeanUtils.copyProperties(userEntity, userVo);
-                valueOperations.set(Constant.USER_MAILBOX + mailbox, userEntity,
-                        Constant.EXPIRE_TIME_30_MINS, TimeUnit.MILLISECONDS); //设置用户登录Token, 过期时间30分钟
-                return userVo;
+                String token = UUID.randomUUID().toString();
+                valueOperations.set(Constant.USER_MAILBOX + token, userEntity.getMailbox(),
+                        Constant.EXPIRE_TIME_1_HOUR, TimeUnit.MILLISECONDS); //设置用户登录Token, 过期时间1小时
+                userLoginVo.setMailbox(userEntity.getMailbox());
+                userLoginVo.setToken(token);
+                return userLoginVo;
             }else {
                 throw new ServiceException(Constant.DATA_ERROR, "登录密码错误!");
             }

@@ -3,7 +3,7 @@ package com.liumd.data.controller;
 import com.liumd.data.dto.AdminDto;
 import com.liumd.data.dto.UserDto;
 import com.liumd.data.dto.vo.AdminVo;
-import com.liumd.data.dto.vo.UserVo;
+import com.liumd.data.dto.vo.UserLoginVo;
 import com.liumd.data.service.AdminService;
 import com.liumd.data.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +24,8 @@ public class LoginController {
     @Autowired
     private AdminService adminService;
 
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public UserVo userLogin(@RequestBody @Validated UserDto userDto) {
+    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    public UserLoginVo userLogin(@RequestBody @Validated UserDto userDto) {
         return userService.userLogin(userDto);
     }
 

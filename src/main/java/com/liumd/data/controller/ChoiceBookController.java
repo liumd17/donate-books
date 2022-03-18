@@ -1,5 +1,6 @@
 package com.liumd.data.controller;
 
+import com.liumd.data.constant.Constant;
 import com.liumd.data.dto.BookDto;
 import com.liumd.data.dto.OrderDto;
 import com.liumd.data.dto.ResponsePageDto;
@@ -14,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -47,8 +49,8 @@ public class ChoiceBookController {
      */
     @SneakyThrows
     @RequestMapping(value = "/homePage", method = RequestMethod.GET)
-    public ShowBookVo bookPage(String mailbox, BookDto bookDto, Paging paging) {
-        List<BookVo> recBooks = bookService.getRecBooks(mailbox);
+    public ShowBookVo bookPage(HttpServletRequest request, BookDto bookDto, Paging paging) {
+        List<BookVo> recBooks = bookService.getRecBooks(request.getHeader(Constant.USER_MAILBOX));
         ResponsePageDto<BookVo> bookPageList = bookService.pageList(bookDto, paging);
         ShowBookVo showBookVo = new ShowBookVo();
         if (!ObjectUtils.isEmpty(recBooks)){
@@ -62,13 +64,12 @@ public class ChoiceBookController {
 
     /**
      * 选择书籍查看订单信息
-     * @param mailbox
      * @param bookId
      * @return
      */
     @RequestMapping(value = "/setOrder", method = RequestMethod.GET)
-    public BookOrderVo getBookOrder(@RequestParam String mailbox, @RequestParam Integer bookId) {
-        return orderService.getBookOrder(mailbox, bookId);
+    public BookOrderVo getBookOrder(HttpServletRequest request, @RequestParam Integer bookId) {
+        return orderService.getBookOrder(request.getHeader(Constant.USER_MAILBOX), bookId);
     }
 
     /**
