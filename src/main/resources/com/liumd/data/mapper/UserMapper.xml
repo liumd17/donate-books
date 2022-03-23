@@ -5,7 +5,16 @@
 <mapper namespace="com.liumd.data.mapper.UserMapper">
 
     <select id="selUserByMailbox" resultType="com.liumd.data.entity.UserEntity">
-        select id, mailbox, passw0rd, nickname, user_name, sex, age, mobile, receiving_address, create_time, update_time
+        select id,
+        mailbox,
+        passw0rd,
+        nickname,
+        user_name as userName,
+        sex, age,
+        mobile,
+        receiving_address as receivingAddress,
+        create_time as createTime,
+        update_time as updateTime
         from bds_user
         <where>
             mailbox = #{mailbox}

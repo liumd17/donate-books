@@ -8,7 +8,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 public class Paging {
     @ApiModelProperty("分页大小")
-    private int pageSize = 20;
+    private int pageSize = 5;
     @ApiModelProperty("页码, 默认从1开始")
     private int pageNum = 1;
 

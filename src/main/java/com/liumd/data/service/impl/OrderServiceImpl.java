@@ -7,6 +7,7 @@ import com.liumd.data.constant.OrderConstant;
 import com.liumd.data.dto.OrderDto;
 import com.liumd.data.dto.OrderPageDto;
 import com.liumd.data.dto.ResponsePageDto;
+import com.liumd.data.dto.UserDto;
 import com.liumd.data.dto.vo.BookOrderVo;
 import com.liumd.data.dto.vo.UserVo;
 import com.liumd.data.dto.vo.BookVo;
@@ -93,7 +94,7 @@ public class OrderServiceImpl implements OrderService {
         String nowMonth = DateUtils.getNowYesMonth();
         Example example =  new Example(OrderEntity.class);
         example.and(example.createCriteria().andEqualTo("userId", userId)
-                .orLike("orderDate", "%"+nowMonth+"%").andNotEqualTo("orderStatus", OrderConstant.ORDER_CANCEL));
+                .andLike("orderDate", "%"+nowMonth+"%").andNotEqualTo("orderStatus", OrderConstant.ORDER_CANCEL));
         List<OrderEntity> orderEntityList = orderMapper.selectByExample(example);
         OrderEntity orderEntity = new OrderEntity();
 
@@ -131,12 +132,13 @@ public class OrderServiceImpl implements OrderService {
         Example example = new Example(OrderEntity.class);
         Example.Criteria criteria = example.createCriteria();
 
-        Integer userId = orderPageDto.getUserId();
-        if(ObjectUtils.isEmpty(userId)){
-            throw new ServiceException(Constant.NULL_ERROR, "用户ID为空!");
+        String mailbox = orderPageDto.getMailbox();
+        UserVo userVo = userService.queryUserByMailbox(mailbox);
+        if(ObjectUtils.isEmpty(userVo)){
+            throw new ServiceException(Constant.NULL_ERROR, "用户信息为空!");
         }
 
-        criteria.andEqualTo("userId", userId);
+        criteria.andEqualTo("userId", userVo.getId());
         if (StringUtil.isNotEmpty(orderPageDto.getBookName())){
             criteria.andLike("bookName", "%" + orderPageDto.getBookName()+ "%");
         }
@@ -180,20 +182,14 @@ public class OrderServiceImpl implements OrderService {
                 if (ObjectUtils.isEmpty(payOrder)) {
                     throw new ServiceException(Constant.DATA_ERROR, "该笔订单无法取消!");
                 } else {
-                    if (OrderConstant.ORDER_CANCEL.equals(orderDto.getOrderStatus())){
-                        payOrder.setOrderStatus(OrderConstant.ORDER_CANCEL);
-                        BookEntity bookEntity = bookMapper.selectByPrimaryKey(payOrder.getBookId());
-                        bookEntity.setBookAmount(bookEntity.getBookAmount() + 1);
-                        bookEntity.setUpdateTime(new Date());
-                        bookMapper.updateByPrimaryKey(bookEntity);
-                    }
+                    BookEntity bookEntity = bookMapper.selectByPrimaryKey(payOrder.getBookId());
+                    bookEntity.setBookAmount(bookEntity.getBookAmount() + 1);
+                    bookEntity.setUpdateTime(new Date());
+                    bookMapper.updateByPrimaryKey(bookEntity);
 
-                    payOrder.setUserNickname(orderDto.getUserNickname());
-                    payOrder.setMobile(orderDto.getMobile());
-                    payOrder.setReceivingAddress(orderDto.getReceivingAddress());
+                    payOrder.setOrderStatus(OrderConstant.ORDER_CANCEL);
                     payOrder.setUpdateTime(new Date());
                     orderMapper.updateByPrimaryKey(payOrder);
-
                     BeanUtils.copyProperties(payOrder, orderVo);
                     return orderVo;
                 }
@@ -231,8 +227,8 @@ public class OrderServiceImpl implements OrderService {
         if (StringUtil.isEmpty(endDate)){
             endDate = DateUtils.getNowYesMonth();
         }
-        criteria.andGreaterThanOrEqualTo("orderStatus", startDate);
-        criteria.andLessThanOrEqualTo("orderStatus", endDate);
+        criteria.andGreaterThanOrEqualTo("orderDate", startDate);
+        criteria.andLessThanOrEqualTo("orderDate", endDate);
         example.orderBy("createTime").desc();
         PageInfo<OrderEntity> pageInfo = new PageInfo<>(orderMapper.selectByExample(example));
 

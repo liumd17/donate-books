@@ -3,6 +3,7 @@ package com.liumd.data.controller;
 import com.liumd.data.dto.BookDto;
 import com.liumd.data.dto.BookImportDto;
 import com.liumd.data.dto.ResponsePageDto;
+import com.liumd.data.dto.UserChoiceBookDto;
 import com.liumd.data.dto.vo.BookVo;
 import com.liumd.data.pageObject.Paging;
 import com.liumd.data.service.BookService;
@@ -28,13 +29,13 @@ public class BookManageController {
 
     /**
      * 返回所有书籍分页列表
-     * @param bookDto
+     * @param userChoiceBookDto
      * @param paging
      * @return
      */
     @RequestMapping(value = "/pageInfo", method = RequestMethod.GET)
-    public ResponsePageDto<BookVo> queryAdmin(BookDto bookDto, Paging paging) {
-        return bookService.pageList(bookDto, paging);
+    public ResponsePageDto<BookVo> queryAdmin(UserChoiceBookDto userChoiceBookDto, Paging paging) {
+        return bookService.pageList(userChoiceBookDto, paging);
     }
 
     /**

@@ -10,6 +10,11 @@ import lombok.Data;
 public class OrderPageDto {
 
     /**
+     * 用户账户
+     */
+    private String mailbox;
+
+    /**
      * 用户ID
      */
     private Integer userId;

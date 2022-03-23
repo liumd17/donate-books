@@ -7,6 +7,7 @@ import com.liumd.data.constant.Constant;
 import com.liumd.data.dto.BookDto;
 import com.liumd.data.dto.BookImportDto;
 import com.liumd.data.dto.ResponsePageDto;
+import com.liumd.data.dto.UserChoiceBookDto;
 import com.liumd.data.dto.vo.BookVo;
 import com.liumd.data.dto.vo.UserVo;
 import com.liumd.data.entity.BookEntity;
@@ -57,18 +58,20 @@ public class BookServiceImpl implements BookService {
 
     @SneakyThrows
     @Override
-    public ResponsePageDto<BookVo> pageList(BookDto bookDto, Paging paging) {
+    public ResponsePageDto<BookVo> pageList(UserChoiceBookDto userChoiceBookDto, Paging paging) {
         PageHelper.startPage(paging.getPageNum(), paging.getPageSize());
         Example example = new Example(BookEntity.class);
         Example.Criteria criteria = example.createCriteria();
-        if (StringUtil.isNotEmpty(bookDto.getBookName())){
-            criteria.andLike("bookName", "%" + bookDto.getBookName() + "%");
+        if (StringUtil.isNotEmpty(userChoiceBookDto.getBookName())){
+            criteria.andLike("bookName", "%" + userChoiceBookDto.getBookName() + "%");
         }
-        if (StringUtil.isNotEmpty(bookDto.getFitUser())){
-            criteria.andLike("FitUser", "%" + bookDto.getFitUser() + "%");
+        if (StringUtil.isNotEmpty(userChoiceBookDto.getFitUser())){
+            criteria.andLike("FitUser", "%" + userChoiceBookDto.getFitUser() + "%");
         }
-        criteria.orGreaterThan("bookAmount", 0);
+        criteria.andGreaterThan("bookAmount", 0);
         example.orderBy("createTime").desc();
+        List<BookEntity> result = bookMapper.selectByExample(example);
+
         PageInfo<BookEntity> pageInfo = new PageInfo<>(bookMapper.selectByExample(example));
 
         return new ResponsePageDto<>(

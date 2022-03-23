@@ -9,6 +9,12 @@ spring:
     username: root
     password: 123456
     url: jdbc:mysql://127.0.0.1:3306/book_donation_system?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+  pagehelper:
+    helper-dialect: MYSQL
+    reasonable: true
+    support-methods-arguments: true
+    params:
+      count: countSql
   redis:
     database: 0
     host: 127.0.0.1

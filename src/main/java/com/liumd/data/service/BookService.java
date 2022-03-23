@@ -1,9 +1,6 @@
 package com.liumd.data.service;
 
-import com.liumd.data.dto.BookDto;
-import com.liumd.data.dto.BookImportDto;
-import com.liumd.data.dto.ResponsePageDto;
-import com.liumd.data.dto.UserDto;
+import com.liumd.data.dto.*;
 import com.liumd.data.dto.vo.BookVo;
 import com.liumd.data.pageObject.Paging;
 
@@ -24,11 +21,11 @@ public interface BookService {
 
     /**
      * 可选书籍分页列表
-     * @param bookDto
+     * @param userChoiceBookDto
      * @param paging
      * @return
      */
-    ResponsePageDto<BookVo> pageList(BookDto bookDto, Paging paging);
+    ResponsePageDto<BookVo> pageList(UserChoiceBookDto userChoiceBookDto, Paging paging);
 
     /**
      * 根据用户信息获取推荐书籍列表

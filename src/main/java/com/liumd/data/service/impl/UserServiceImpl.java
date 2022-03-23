@@ -7,9 +7,11 @@ import com.liumd.data.dto.vo.UserVo;
 import com.liumd.data.entity.UserEntity;
 import com.liumd.data.mapper.UserMapper;
 import com.liumd.data.service.UserService;
+import com.liumd.data.utils.DataUtil;
 import com.liumd.data.utils.MD5Util;
 import com.liumd.data.utils.exceptionUtil.ServiceException;
 import io.netty.util.internal.StringUtil;
+import lombok.SneakyThrows;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ValueOperations;
@@ -94,19 +96,27 @@ public class UserServiceImpl implements UserService {
         return userMapper.insert(userEntity) > 0;
     }
 
+    @SneakyThrows
     @Override
     @Transactional
     public Boolean updateUser(@Validated UserEntity userEntity) {
-        Integer id = userEntity.getId();
-        if (!ObjectUtils.isEmpty(id)){
-            throw new ServiceException(Constant.NULL_ERROR, "用户id不能为空!");
+        String mailbox = userEntity.getMailbox();
+        if (StringUtil.isNullOrEmpty(mailbox)){
+            throw new ServiceException(Constant.NULL_ERROR, "用户账户不能为空!");
         }
-        UserEntity updateUserEntity = userMapper.selectByPrimaryKey(id);
-        userEntity.setPassw0rd(MD5Util.encrypt(userEntity.getPassw0rd()));
-        if (!ObjectUtils.isEmpty(updateUserEntity)) {
-            BeanUtils.copyProperties(userEntity, updateUserEntity);
-        } else {
+        UserEntity updateUserEntity = userMapper.selUserByMailbox(mailbox);
+        if (ObjectUtils.isEmpty(updateUserEntity)) {
             throw new ServiceException(Constant.DATA_ERROR, "用户不存在!");
+        }
+        if (StringUtil.isNullOrEmpty(userEntity.getPassw0rd())){
+            userEntity.setPassw0rd(updateUserEntity.getPassw0rd());
+            updateUserEntity = DataUtil.getTransData(userEntity, UserEntity.class);
+        }else {
+            String newPassw0rd = MD5Util.encrypt(userEntity.getPassw0rd());
+            if (updateUserEntity.getPassw0rd().equals(newPassw0rd)){
+                throw new ServiceException(Constant.DATA_ERROR, "新密码不能与旧密码相同!");
+            }
+            updateUserEntity.setPassw0rd(newPassw0rd);
         }
 
         return userMapper.updateByPrimaryKey(updateUserEntity) > 0;

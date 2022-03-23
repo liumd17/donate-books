@@ -25,13 +25,13 @@ public class OrderHandleController {
      * @param orderPageDto
      * @return
      */
-    @RequestMapping(value = "/pageInfo", method = RequestMethod.GET)
-    public ResponsePageDto<OrderVo> OrderPageInfo(OrderPageDto orderPageDto, Paging paging){
+    @RequestMapping(value = "/pageInfo", method = RequestMethod.POST)
+    public ResponsePageDto<OrderVo> OrderPageInfo(@RequestBody OrderPageDto orderPageDto, Paging paging){
         return orderService.getUserOrderPageInfo(orderPageDto, paging);
     }
 
     /**
-     * 修改用户订单取消
+     * 用户订单取消
      * @param orderDto
      * @return
      */
@@ -42,12 +42,12 @@ public class OrderHandleController {
 
     /**
      * 用户支付待确认
-     * @param orderId
+     * @param orderDto
      * @return
      */
     @RequestMapping(value = "/pay", method = RequestMethod.POST)
-    public OrderVo userPay(@RequestParam Integer orderId) {
-        return orderService.userPay(orderId);
+    public OrderVo userPay(@RequestBody OrderDto orderDto) {
+        return orderService.userPay(orderDto.getOrderId());
     }
 
 }

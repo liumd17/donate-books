@@ -1,9 +1,8 @@
 package com.liumd.data.controller;
 
-import com.liumd.data.constant.Constant;
-import com.liumd.data.dto.BookDto;
 import com.liumd.data.dto.OrderDto;
 import com.liumd.data.dto.ResponsePageDto;
+import com.liumd.data.dto.UserChoiceBookDto;
 import com.liumd.data.dto.vo.BookOrderVo;
 import com.liumd.data.dto.vo.BookVo;
 import com.liumd.data.dto.vo.ShowBookVo;
@@ -15,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -43,15 +41,15 @@ public class ChoiceBookController {
 
     /**
      * 获取书籍列表信息
-     * @param bookDto
+     * @param userChoiceBookDto
      * @param paging
      * @return
      */
     @SneakyThrows
-    @RequestMapping(value = "/homePage", method = RequestMethod.GET)
-    public ShowBookVo bookPage(HttpServletRequest request, BookDto bookDto, Paging paging) {
-        List<BookVo> recBooks = bookService.getRecBooks(request.getHeader(Constant.USER_MAILBOX));
-        ResponsePageDto<BookVo> bookPageList = bookService.pageList(bookDto, paging);
+    @RequestMapping(value = "/homePage", method = RequestMethod.POST)
+    public ShowBookVo bookPage(@RequestBody UserChoiceBookDto userChoiceBookDto, Paging paging) {
+        List<BookVo> recBooks = bookService.getRecBooks(userChoiceBookDto.getMailbox());
+        ResponsePageDto<BookVo> bookPageList = bookService.pageList(userChoiceBookDto, paging);
         ShowBookVo showBookVo = new ShowBookVo();
         if (!ObjectUtils.isEmpty(recBooks)){
             showBookVo.setRecBooks(recBooks);
@@ -64,12 +62,12 @@ public class ChoiceBookController {
 
     /**
      * 选择书籍查看订单信息
-     * @param bookId
+     * @param userChoiceBookDto
      * @return
      */
-    @RequestMapping(value = "/setOrder", method = RequestMethod.GET)
-    public BookOrderVo getBookOrder(HttpServletRequest request, @RequestParam Integer bookId) {
-        return orderService.getBookOrder(request.getHeader(Constant.USER_MAILBOX), bookId);
+    @RequestMapping(value = "/setOrder", method = RequestMethod.POST)
+    public BookOrderVo getBookOrder(@RequestBody UserChoiceBookDto userChoiceBookDto) {
+        return orderService.getBookOrder(userChoiceBookDto.getMailbox(), userChoiceBookDto.getId());
     }
 
     /**
